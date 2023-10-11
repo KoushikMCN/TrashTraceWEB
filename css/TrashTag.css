@@ -1,0 +1,45 @@
+/* CSS Reset  */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#scan{
+    padding: 20px;
+    margin: 600px;
+    border: 2px solid black;
+    border-radius: 25px;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+}
+#scan>p{
+    text-align: center;
+    font-size: 2rem;
+    padding: 5px 15px;
+}
+
+h1{
+    text-align: center;
+    padding: 50px;
+}
+
+img{
+    z-index: -1;
+    opacity: 0.6;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}

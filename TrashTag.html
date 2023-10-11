@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrashTag</title>
+    <link rel="stylesheet" href="css/TrashTag.css">
+    <script>
+        function openCam(){
+           let All_mediaDevices=navigator.mediaDevices
+           if (!All_mediaDevices || !All_mediaDevices.getUserMedia) {
+              console.log("getUserMedia() not supported.");
+              return;
+           }
+           All_mediaDevices.getUserMedia({
+              audio: true,
+              video: true
+           })
+           .then(function(vidStream) {
+              var video = document.getElementById('videoCam');
+              if ("srcObject" in video) {
+                 video.srcObject = vidStream;
+              } else {
+                 video.src = window.URL.createObjectURL(vidStream);
+              }
+              video.onloadedmetadata = function(e) {
+                 video.play();
+              };
+           })
+           .catch(function(e) {
+              console.log(e.name + ": " + e.message);
+           });
+        }
+     </script>
+</head>
+<body>
+    
+    <img src="images\bg.jpg" alt="">
+    <h1>TrashTag</h1> <br> <br> <br><br><br>
+    <div id="scan"><p onclick="openCam()" id="videoCam">Scan QR</p></div>
+
+</body>
+</html>
